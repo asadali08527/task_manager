@@ -15,6 +15,8 @@ class Task(Base):
     description = Column(String, nullable=True)
     completed = Column(Boolean, default=False, index=True)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
+    deleted = Column(Boolean, default=False)  # New column for soft delete
+    deleted_at = Column(DateTime, nullable=True)
 
 
 Index("ix_tasks_completed", Task.completed)

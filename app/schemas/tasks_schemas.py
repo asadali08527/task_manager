@@ -44,6 +44,8 @@ class TaskResponse(BaseModel):
     )  # Explicitly set default=None
     completed: bool = Field(False, description="Status of task completion")
     created_at: datetime = Field(..., description="Timestamp when the task was created")
+    deleted: bool = Field(False, description="Task deletion status")
+    deleted_at: Optional[datetime] = Field(..., description="Timestamp when the task was deleted")
 
     class Config:
         # Define fields...

@@ -1,3 +1,4 @@
+import datetime
 import logging
 from typing import Optional
 
@@ -35,7 +36,7 @@ class TaskService:
                                     while querying tasks.
         """
         try:
-            query = db.query(Task)
+            query = db.query(Task).filter(Task.deleted == False)
             if completed is not None:
                 query = query.filter(Task.completed == completed)
             tasks = query.all()
@@ -60,7 +61,8 @@ class TaskService:
             TaskNotFoundException: If the task with the specified
                                     ID does not exist.
         """
-        task = db.query(Task).filter(Task.id == task_id).first()
+        task = db.query(Task).filter(Task.id == task_id,
+                                     Task.deleted == False).first()
         if not task:
             logger.error(f"Task:{task_id} not found")
             raise TaskNotFoundException()
@@ -174,6 +176,8 @@ class TaskService:
         """
         task = TaskService.get_task_by_id(task_id, db)
         try:
+            task.deleted = True
+            task.deleted_at = datetime.datetime.now()
             db.delete(task)
             db.commit()
         except Exception as e:
