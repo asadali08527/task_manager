@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "task-manager"
+version = "0.1.0"
+description = "A simple Task Manager API."
+authors = ["Asad Ali <asadali.syne@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9.21"
+fastapi = "^0.100.0"
+uvicorn = "^0.18.0"
+sqlalchemy = "^1.4.0"
+pydantic = "^2.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"
+pytest-cov = "^3.0"
+
+[tool.poetry.scripts]
+task-manager = "app.main:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
