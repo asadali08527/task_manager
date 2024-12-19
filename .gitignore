@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Poetry files
+poetry.lock
+
+# SQLite database files
+*.sqlite3
+
+# Logs
+*.log
+
+# Pytest cache
+.pytest_cache/
+
+# IDE files
+.idea/
+.vscode/
