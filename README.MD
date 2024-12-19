@@ -26,8 +26,8 @@ The Task Manager API is a simple backend application for managing tasks in a to-
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/asadali08527/task_manager.git
+   cd task_manager
    ```
 
 2. Install dependencies using Poetry:
@@ -40,12 +40,7 @@ The Task Manager API is a simple backend application for managing tasks in a to-
    poetry shell
    ```
 
-4. Run database migrations (if needed):
-   ```bash
-   # Example: alembic upgrade head
-   ```
-
-5. Start the server:
+4. Start the server:
    ```bash
    poetry run uvicorn app.main:app --reload
    ```
@@ -181,11 +176,6 @@ The Task Manager API is a simple backend application for managing tasks in a to-
       "detail": "Task:1 deleted successfully"
   }
   ```
-
----
-
-## Postman Collection
-A Postman collection for testing the API is provided. Import the collection from the attached file: `TaskManager.postman_collection.json`.
 
 ---
 
