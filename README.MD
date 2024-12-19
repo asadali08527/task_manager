@@ -49,7 +49,7 @@ The Task Manager API is a simple backend application for managing tasks in a to-
 
 ## Running Tests
 
-1. Run tests using `pytest`:
+Run tests using `pytest`:
    ```bash
    poetry run pytest
    ```
